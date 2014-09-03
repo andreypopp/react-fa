@@ -1,0 +1,9 @@
+{
+  "globalstrict": false,
+  "node": true,
+  "browser": true,
+  "newcap": false,
+  "globals": {
+    "__MOUNT_PREFIX__": true
+  }
+}

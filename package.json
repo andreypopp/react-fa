@@ -10,6 +10,7 @@
   "devDependencies": {
     "css-loader": "^0.7.1",
     "jsx-loader": "^0.11.0",
+    "jsxhint": "^0.4.14",
     "style-loader": "^0.7.1",
     "url-loader": "^0.5.5",
     "webpack": "^1.4.0-beta3"
