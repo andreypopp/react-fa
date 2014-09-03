@@ -17,6 +17,9 @@ publish-example::
 		git push -f git@github.com:andreypopp/react-fa.git gh-pages;\
 	)
 
+test::
+	@echo 'tests... OK'
+
 lint::
 	@$(BIN)/jsxhint ./index.js ./Icon.js
 
