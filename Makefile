@@ -32,7 +32,6 @@ release-major: test lint
 publish:
 	@git push --tags origin HEAD:master
 	@npm publish
-	@$(MAKE) docs-publish
 
 define release
 	npm version $(1)
