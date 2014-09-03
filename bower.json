@@ -1,0 +1,24 @@
+{
+  "name": "react-fa",
+  "description": "Font Awesome icons as React components",
+  "main": "index.js",
+  "dependencies": {
+    "font-awesome": "^4.2.0",
+    "react": "^0.11.1"
+  },
+  "authors": [
+    "Andrey Popp <8mayday@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "http://andreypopp.github.io/react-fa/"
+}
