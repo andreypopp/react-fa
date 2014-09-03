@@ -15,6 +15,7 @@ assets such as fonts and images:
 You also need a couple of loaders for webpack:
 
     % npm install jsx-loader style-loader css-loader url-loader
+    % npm install extract-text-webpack-plugin
 
 ## Usage
 
