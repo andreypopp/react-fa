@@ -1,0 +1,36 @@
+{
+  "name": "react-fa",
+  "version": "1.0.0",
+  "description": "Font Awesome icons as React components",
+  "main": "index.js",
+  "dependencies": {
+    "font-awesome": "^4.2.0",
+    "react": "^0.11.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.7.1",
+    "jsx-loader": "^0.11.0",
+    "style-loader": "^0.7.1",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.4.0-beta3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreypopp/react-fa"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "font-awesome",
+    "icons"
+  ],
+  "author": "Andrey Popp <8mayday@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreypopp/react-fa/issues"
+  },
+  "homepage": "https://github.com/andreypopp/react-fa"
+}
