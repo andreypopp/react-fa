@@ -18,23 +18,31 @@ var Icon = React.createClass({
   },
 
   render() {
-    var className = 'fa fa-' + this.props.name;
-    if (this.props.size) {
-      className += ' fa-' + this.props.size;
+    /*jshint eqnull:true */
+    var {
+      name, size, rotate, flip, spin, fixedWidth,
+      className, ...props
+    } = this.props;
+    var classNames = `fa fa-${name}`;
+    if (size) {
+      classNames += ` fa-${size}`;
     }
-    if (this.props.rotate) {
-      className += ' fa-rotate-' + this.props.rotate;
+    if (rotate) {
+      classNames += ` fa-rotate-${rotate}`;
     }
-    if (this.props.flip) {
-      className += ' fa-flip-' + this.props.flip;
+    if (flip) {
+      classNames += ` fa-flip-${flip}`;
     }
-    if (this.props.fixedWidth) {
-      className += ' fa-fw';
+    if (fixedWidth) {
+      classNames += ' fa-fw';
     }
-    if (this.props.spin) {
-      className += ' fa-spin';
+    if (spin) {
+      classNames += ' fa-spin';
     }
-    return this.transferPropsTo(<span className={className} />);
+    if (className) {
+      classNames += ` ${className}`;
+    }
+    return <span className={classNames} {...props} />;
   }
 });
 

@@ -66,4 +66,4 @@ var Demo = React.createClass({
   }
 });
 
-React.renderComponent(<Demo />, document.getElementById('main'));
+React.render(<Demo />, document.getElementById('main'));
