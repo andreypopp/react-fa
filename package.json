@@ -1,6 +1,6 @@
 {
   "name": "react-fa",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Font Awesome icons as React components",
   "main": "index.js",
   "dependencies": {
