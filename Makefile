@@ -25,8 +25,8 @@ lint::
 
 build::
 	@mkdir -p dist
-	@$(BIN)/jsx --harmony ./Icon.js > dist/Icon.js
-	@$(BIN)/jsx --harmony ./index.js > dist/index.js
+	@$(BIN)/jsx --harmony ./src/Icon.js > dist/Icon.js
+	@$(BIN)/jsx --harmony ./src/index.js > dist/index.js
 
 release-patch: test lint
 	@$(call release,patch)
