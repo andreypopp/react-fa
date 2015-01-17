@@ -1,12 +1,12 @@
 BIN = $(PWD)/node_modules/.bin
 
-example::
+example: build
 	@(cd example; $(BIN)/webpack --hide-modules)
 
-watch-example::
+watch-example: build
 	@(cd example; $(BIN)/webpack --watch --hide-modules)
 
-publish-example::
+publish-example: build
 	@(cd example;\
 		rm -rf .git;\
 		git init .;\
@@ -23,6 +23,11 @@ test::
 lint::
 	@$(BIN)/jsxhint ./index.js ./Icon.js
 
+build::
+	@mkdir -p dist
+	@$(BIN)/jsx --harmony ./src/Icon.js > dist/Icon.js
+	@$(BIN)/jsx --harmony ./src/index.js > dist/index.js
+
 release-patch: test lint
 	@$(call release,patch)
 
@@ -32,7 +37,7 @@ release-minor: test lint
 release-major: test lint
 	@$(call release,major)
 
-publish:
+publish: build
 	@git push --tags origin HEAD:master
 	@npm publish
 
