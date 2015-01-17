@@ -21,7 +21,7 @@ test::
 	@echo 'tests... OK'
 
 lint::
-	@$(BIN)/jsxhint ./index.js ./Icon.js
+	@$(BIN)/jsxhint ./src/index.js ./src/Icon.js
 
 build::
 	@mkdir -p dist
