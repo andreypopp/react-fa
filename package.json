@@ -4,17 +4,17 @@
   "description": "Font Awesome icons as React components",
   "main": "dist/index.js",
   "dependencies": {
-    "font-awesome": "^4.2.0"
+    "font-awesome": "^4.3.0"
   },
   "peerDependencies": {
-    "react": "^0.12.0"
+    "react": "^0.13.1"
   },
   "devDependencies": {
-    "react": "^0.12.0",
-    "react-tools": "^0.12.2",
+    "react": "^0.13.1",
+    "react-tools": "^0.13.1",
     "css-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^0.3.1",
-    "jsx-loader": "^0.12.0",
+    "jsx-loader": "^0.12.2",
     "jsxhint": "^0.4.14",
     "style-loader": "^0.7.1",
     "url-loader": "^0.5.5",
