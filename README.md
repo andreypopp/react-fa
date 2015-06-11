@@ -46,11 +46,11 @@ Use the following webpack config (put it in `webpack.config.js`):
             loader: 'jsx-loader?harmony'
           },
           {
-            test: /\.css$/,
+            test: /\.(css)(\?.+)$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
           },
           {
-            test: /\.(otf|eot|svg|ttf|woff)$/,
+            test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)$/,
             loader: 'url-loader?limit=8192'
           }
         ]
