@@ -25,7 +25,7 @@ var Icon = React.createClass({
     /*jshint eqnull:true */
     var {
       name, size, rotate, flip, spin, fixedWidth, stack, inverse,
-      className, ...props
+      pulse, className, ...props
     } = this.props;
     var classNames = `fa fa-${name}`;
     if (size) {
