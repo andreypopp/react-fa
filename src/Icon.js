@@ -15,6 +15,7 @@ var Icon = React.createClass({
     flip: PropTypes.oneOf(['horizontal', 'vertical']),
     fixedWidth: PropTypes.bool,
     spin: PropTypes.bool,
+    pulse: PropTypes.bool,
     stack: React.PropTypes.oneOf(['1x', '2x']),
     inverse: React.PropTypes.bool
   },
@@ -40,6 +41,9 @@ var Icon = React.createClass({
     }
     if (spin) {
       classNames += ' fa-spin';
+    }
+    if (pulse) {
+      classNames += ' fa-pulse';
     }
     
     if (stack) {
