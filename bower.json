@@ -1,7 +1,7 @@
 {
   "name": "react-fa",
   "description": "Font Awesome icons as React components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "font-awesome": "^4.2.0",
     "react": "^0.11.1"
