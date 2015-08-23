@@ -9,6 +9,7 @@ var PropTypes = React.PropTypes;
 var Icon = React.createClass({
 
   propTypes: {
+    tag: PropTypes.string.oneOf(['span', 'i']),
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
@@ -17,14 +18,14 @@ var Icon = React.createClass({
     fixedWidth: PropTypes.bool,
     spin: PropTypes.bool,
     pulse: PropTypes.bool,
-    stack: React.PropTypes.oneOf(['1x', '2x']),
-    inverse: React.PropTypes.bool
+    stack: PropTypes.oneOf(['1x', '2x']),
+    inverse: PropTypes.bool
   },
 
   render() {
     /*jshint eqnull:true */
     var {
-      name, size, rotate, flip, spin, fixedWidth, stack, inverse,
+      tag, name, size, rotate, flip, spin, fixedWidth, stack, inverse,
       pulse, className, ...props
     } = this.props;
     var classNames = `fa fa-${name}`;
@@ -57,7 +58,12 @@ var Icon = React.createClass({
     if (className) {
       classNames += ` ${className}`;
     }
-    return <span {...props} className={classNames} />;
+
+    if (tag === 'i') {
+      return <i {...props} className={classNames} />;
+    } else {
+      return <span {...props} className={classNames} />;
+    }
   }
 });
 
