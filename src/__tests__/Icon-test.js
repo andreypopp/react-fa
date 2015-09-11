@@ -52,4 +52,14 @@ describe('Icon', function() {
     let markup = React.renderToString(<Icon inverse name="plus" />);
     assert(/<span class="fa fa-plus fa-inverse"/.exec(markup));
   });
+
+  it('supports custom className', function() {
+    let markup = React.renderToString(<Icon className="x" name="plus" />);
+    assert(/<span class="fa fa-plus x"/.exec(markup));
+  });
+
+  it('can be rendered using different DOM component', function() {
+    let markup = React.renderToString(<Icon Component="i" name="plus" />);
+    assert(/<i class="fa fa-plus"/.exec(markup));
+  });
 });

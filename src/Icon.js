@@ -17,10 +17,16 @@ export default class Icon extends React.Component {
     pulse: PropTypes.bool,
     stack: PropTypes.oneOf(['1x', '2x']),
     inverse: PropTypes.bool,
+    Component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  };
+
+  static defaultProps = {
+    Component: 'span',
   };
 
   render() {
     let {
+      Component,
       name, size, rotate, flip, spin, fixedWidth, stack, inverse,
       pulse, className, ...props
     } = this.props;
@@ -54,6 +60,6 @@ export default class Icon extends React.Component {
     if (className) {
       classNames = `${classNames} ${className}`;
     }
-    return <span {...props} className={classNames} />;
+    return <Component {...props} className={classNames} />;
   }
 }
