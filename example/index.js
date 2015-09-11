@@ -2,7 +2,7 @@
  * @jsx React.DOM
  */
 var React = require('react');
-var Icon = require('../dist/index');
+var Icon = require('../src/index');
 
 var Demo = React.createClass({
 

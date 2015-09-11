@@ -10,14 +10,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'jsx-loader?harmony'
+        loader: 'babel-loader?stage=0'
       },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
-        test: /\.(otf|eot|svg|ttf|woff)$/,
+        test: /\.(otf|eot|svg|ttf|woff)\??/,
         loader: 'url-loader?limit=8192'
       }
     ]
