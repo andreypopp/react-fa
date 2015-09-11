@@ -11,7 +11,10 @@ build:
 	@$(MAKE) -j 8 $(LIB)
 
 test::
-	@echo 'tests... OK'
+	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel/register -- $(TESTS)
+
+ci::
+	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel/register --watch -- $(TESTS) 
 
 lint::
 	@$(BIN)/eslint ./src/
