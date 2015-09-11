@@ -1,14 +1,12 @@
 /**
- * @jsx React.DOM
+ * @copyright 2015, Andrey Popp <8mayday@gmail.com>
  */
-'use strict';
 
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, {PropTypes} from 'react';
 
-var Icon = React.createClass({
+export default class Icon extends React.Component {
 
-  propTypes: {
+  static propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
@@ -17,48 +15,45 @@ var Icon = React.createClass({
     fixedWidth: PropTypes.bool,
     spin: PropTypes.bool,
     pulse: PropTypes.bool,
-    stack: React.PropTypes.oneOf(['1x', '2x']),
-    inverse: React.PropTypes.bool
-  },
+    stack: PropTypes.oneOf(['1x', '2x']),
+    inverse: PropTypes.bool,
+  };
 
   render() {
-    /*jshint eqnull:true */
-    var {
+    let {
       name, size, rotate, flip, spin, fixedWidth, stack, inverse,
       pulse, className, ...props
     } = this.props;
-    var classNames = `fa fa-${name}`;
+    let classNames = `fa fa-${name}`;
     if (size) {
-      classNames += ` fa-${size}`;
+      classNames = `${classNames} fa-${size}`;
     }
     if (rotate) {
-      classNames += ` fa-rotate-${rotate}`;
+      classNames = `${classNames} fa-rotate-${rotate}`;
     }
     if (flip) {
-      classNames += ` fa-flip-${flip}`;
+      classNames = `${classNames} fa-flip-${flip}`;
     }
     if (fixedWidth) {
-      classNames += ' fa-fw';
+      classNames = `${classNames} fa-fw`;
     }
     if (spin) {
-      classNames += ' fa-spin';
+      classNames = `${classNames} fa-spin`;
     }
     if (pulse) {
-      classNames += ' fa-pulse';
+      classNames = `${classNames} fa-pulse`;
     }
-    
+
     if (stack) {
-      classNames += ` fa-stack-${stack}`;
+      classNames = `${classNames} fa-stack-${stack}`;
     }
     if (inverse) {
-      classNames += ' fa-inverse';
+      classNames = `${classNames} fa-inverse`;
     }
-    
+
     if (className) {
-      classNames += ` ${className}`;
+      classNames = `${classNames} ${className}`;
     }
     return <span {...props} className={classNames} />;
   }
-});
-
-module.exports = Icon;
+}

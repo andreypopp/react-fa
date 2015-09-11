@@ -1,5 +1,7 @@
-'use strict';
+/**
+ * @copyright 2015, Andrey Popp <8mayday@gmail.com>
+ */
 
-require('font-awesome/css/font-awesome.css');
+import 'font-awesome/css/font-awesome.css';
 
-module.exports = require('./Icon');
+export {default as default} from './Icon';
