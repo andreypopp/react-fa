@@ -19,7 +19,7 @@ npm install webpack
 You also need a couple of loaders for webpack:
 
 ```bash
-npm install jsx-loader style-loader css-loader url-loader
+npm install jsx-loader style-loader css-loader url-loader file-loader
 npm install extract-text-webpack-plugin
 ```
 
