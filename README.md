@@ -33,7 +33,7 @@ var Icon = require('react-fa')
 
 React.renderComponent(
   <Icon spin name="spinner" />,
-  document.body
+  document.getElementById('main')
 )
 ```
 
