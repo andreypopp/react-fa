@@ -28,10 +28,11 @@ npm install extract-text-webpack-plugin
 Just as simple as:
 
 ```javascript
-var React = require('react')
-var Icon = require('react-fa')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Icon from 'react-fa'
 
-React.renderComponent(
+ReactDOM.renderComponent(
   <Icon spin name="spinner" />,
   document.getElementById('main')
 )
