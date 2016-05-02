@@ -4,4 +4,10 @@
 
 import 'font-awesome/css/font-awesome.css';
 
-export {default as default} from './Icon';
+import Icon from './Icon'
+import IconStack from './IconStack'
+
+export {
+  Icon as default,
+  IconStack
+}
