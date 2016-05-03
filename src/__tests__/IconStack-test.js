@@ -5,7 +5,8 @@
 import assert from 'power-assert';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import Icon, { IconStack } from '../'
+import Icon from '../Icon';
+import IconStack from '../IconStack';
 
 describe('IconStack', function() {
 
