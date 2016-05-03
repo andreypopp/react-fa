@@ -4,7 +4,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom')
 var ReactFA = require('../src/index');
-var Icon = ReactFA.default;
+var Icon = ReactFA.Icon;
 var IconStack = ReactFA.IconStack;
 
 var Demo = React.createClass({
