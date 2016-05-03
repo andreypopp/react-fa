@@ -2,7 +2,10 @@
  * @jsx React.DOM
  */
 var React = require('react');
-var Icon = require('../src/index');
+var ReactDOM = require('react-dom')
+var ReactFA = require('../src/index');
+var Icon = ReactFA.default;
+var IconStack = ReactFA.IconStack;
 
 var Demo = React.createClass({
 
@@ -61,9 +64,32 @@ var Demo = React.createClass({
           <pre>{`<Icon name="shield" flip="vertical" />`}</pre>
           <Icon name="shield" flip="vertical" />
         </article>
+        <article>
+          <h2>Stacked Icons</h2>
+          <pre>{`
+<IconStack>
+  <Icon name="circle" stack="2x" />
+  <Icon name="home" stack="1x" inverse={true} />
+</IconStack>
+`}</pre>
+          <IconStack>
+            <Icon name="circle" stack="2x" />
+            <Icon name="home" stack="1x" inverse={true} />
+          </IconStack>
+          <pre>{`
+<IconStack size="2x">
+  <Icon name="circle" stack="2x" />
+  <Icon name="home" stack="1x" inverse={true} />
+</IconStack>
+`}</pre>
+          <IconStack size="2x">
+            <Icon name="circle" stack="2x" />
+            <Icon name="home" stack="1x" inverse={true} />
+          </IconStack>
+        </article>
       </article>
     );
   }
 });
 
-React.render(<Demo />, document.getElementById('main'));
+ReactDOM.render(<Demo />, document.getElementById('main'));
