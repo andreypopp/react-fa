@@ -16,7 +16,7 @@ describe('IconStack', function() {
         <Icon name='plus' />
       </IconStack>
     )
-    assert(/<span class="fa-stack fa-lg"/.exec(markup))
+    assert(/<span class="fa-stack"/.exec(markup))
   });
 
   it('supports optional "size"', function() {
@@ -34,6 +34,6 @@ describe('IconStack', function() {
         <Icon name='plus' />
       </IconStack>
     )
-    assert(/<span class="fa-stack fa-lg x"/.exec(markup))
+    assert(/<span class="fa-stack x"/.exec(markup))
   });
 });
