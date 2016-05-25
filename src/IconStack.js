@@ -12,10 +12,6 @@ export default class IconStack extends React.Component {
     children: PropTypes.node.isRequired
   };
 
-  static defaultProps = {
-    size: 'lg',
-  };
-
   render() {
     let {
       className,
@@ -24,14 +20,20 @@ export default class IconStack extends React.Component {
       ...props
     } = this.props;
 
-    let classNames = `fa-stack fa-${size}`;
+    let classNames = ['fa-stack'];
 
-    if (className) {
-      classNames = `${classNames} ${className}`;
+    if (size) {
+      classNames.push(`fa-${size}`);
     }
 
+    if (className) {
+      classNames.push(className);
+    }
+
+    const iconStackClassName = classNames.join(' ');
+
     return (
-      <span {...props} className={classNames}>
+      <span {...props} className={iconStackClassName}>
         {children}
       </span>
     );

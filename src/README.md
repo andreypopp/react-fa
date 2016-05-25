@@ -21,7 +21,7 @@
 |Prop       |Type    |Default    |Description                                 |
 |-----------|:------:|:---------:|--------------------------------------------|
 |[children] |`node`|`undefined`|Required: Child elements |
-|[size]     |`string`|`lg`|Stack size: 'lg', '2x', '3x', '4x', '5x' |
+|[size]     |`string`|`undefined`|Increase size: 'lg', '2x', '3x', '4x', '5x' |
 |[className]|`string`|`undefined`|Set a CSS class for extra styles            |
 
 
