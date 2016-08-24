@@ -31,8 +31,8 @@ export default class Icon extends React.Component {
       name, size, rotate, flip, spin, fixedWidth, stack, inverse,
       pulse, className, ...props
     } = this.props;
-    
-    let classNames = joinClassNames(
+
+    const classNames = joinClassNames(
       'fa', 
       `fa-${name}`,
       [size, `fa-${size}`],

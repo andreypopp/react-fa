@@ -3,6 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
+import joinClassNames from 'joinable';
 
 export default class IconStack extends React.Component {
 
@@ -20,17 +21,7 @@ export default class IconStack extends React.Component {
       ...props
     } = this.props;
 
-    let classNames = ['fa-stack'];
-
-    if (size) {
-      classNames.push(`fa-${size}`);
-    }
-
-    if (className) {
-      classNames.push(className);
-    }
-
-    const iconStackClassName = classNames.join(' ');
+    const iconStackClassName = joinClassNames('fa-stack', [size, `fa-${size}`], className);
 
     return (
       <span {...props} className={iconStackClassName}>
