@@ -119,6 +119,8 @@ directory so you would need this basic HTML file to start your app:
 </html>
 ```
 
+Note: If you run into issues with loading the FontAwesome font when *not* using `ExtractTextPlugin`, this might be fixed by making your `publicPath` absolute. See [this StackOverflow question](http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809) for details.
+
 [webpack]: http://webpack.github.io/
 [npm]: http://npmjs.org
 [More Info]: http://fontawesome.io/examples/ 'Scroll to stacked icons'
