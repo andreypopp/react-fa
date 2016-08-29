@@ -10,7 +10,7 @@ export default class Icon extends React.Component {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
-    rotate: PropTypes.oneOf(['45', '90', '135', '180', '225', '270', '315']),
+    rotate: PropTypes.oneOf(['90', '180', '270']),
     flip: PropTypes.oneOf(['horizontal', 'vertical']),
     fixedWidth: PropTypes.bool,
     spin: PropTypes.bool,
