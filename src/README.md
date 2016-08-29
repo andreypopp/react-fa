@@ -8,7 +8,7 @@
 |name       |`string`|`undefined`|Required: Name of the Font Awesome Icon     |
 |[className]|`string`|`undefined`|Set a CSS class for extra styles            |
 |[size]     |`string`|`undefined`|Increase size: 'lg', '2x', '3x', '4x', '5x' |
-|[rotate]   |`string`|`undefined`|Rotate by deg: '45', '90', '135', '180', '225', '270', '315'|
+|[rotate]   |`string`|`undefined`|Rotate by deg:'90', '180', '270'            |
 |[flip]     |`string`|`undefined`|Flips Icon: 'horizontal', 'vertical'        |
 |[fixedWidth]|`boolean`|`false`|Set Icon to a fixed width                   |
 |[spin]     |`boolean`| `false`|Rotate Icon|
