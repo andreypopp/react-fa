@@ -3,6 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
+import joinClassNames from 'joinable';
 
 export default class Icon extends React.Component {
 
@@ -30,36 +31,20 @@ export default class Icon extends React.Component {
       name, size, rotate, flip, spin, fixedWidth, stack, inverse,
       pulse, className, ...props
     } = this.props;
-    let classNames = `fa fa-${name}`;
-    if (size) {
-      classNames = `${classNames} fa-${size}`;
-    }
-    if (rotate) {
-      classNames = `${classNames} fa-rotate-${rotate}`;
-    }
-    if (flip) {
-      classNames = `${classNames} fa-flip-${flip}`;
-    }
-    if (fixedWidth) {
-      classNames = `${classNames} fa-fw`;
-    }
-    if (spin) {
-      classNames = `${classNames} fa-spin`;
-    }
-    if (pulse) {
-      classNames = `${classNames} fa-pulse`;
-    }
 
-    if (stack) {
-      classNames = `${classNames} fa-stack-${stack}`;
-    }
-    if (inverse) {
-      classNames = `${classNames} fa-inverse`;
-    }
+    const classNames = joinClassNames(
+      'fa', 
+      `fa-${name}`,
+      [size, `fa-${size}`],
+      [rotate, `fa-rotate-${rotate}`],
+      [flip, `fa-flip-${flip}`],
+      [fixedWidth, 'fa-fw'],
+      [spin, 'fa-spin'],
+      [pulse, 'fa-pulse'],
+      [stack, `fa-stack-${stack}`],
+      [inverse, 'fa-inverse'],
+      className);
 
-    if (className) {
-      classNames = `${classNames} ${className}`;
-    }
     return <Component {...props} className={classNames} />;
   }
 }
