@@ -3,39 +3,41 @@
  */
 
 import React, {PropTypes} from 'react';
+import classnames from 'classnames';
 
-export default class IconStack extends React.Component {
-
-  static propTypes = {
+const propTypes = {
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
-    children: PropTypes.node.isRequired
-  };
+    children: PropTypes.node.isRequired,
+};
 
-  render() {
-    let {
-      className,
-      size,
-      children,
-      ...props
-    } = this.props;
+const defaultProps = {
+    className: '',
+    size: null,
+};
 
-    let classNames = ['fa-stack'];
+function IconStack(props) {
+  const {
+    className,
+    size,
+    children,
+    ...restProps
+  } = props;
 
-    if (size) {
-      classNames.push(`fa-${size}`);
-    }
+  const iconStackClassNames = classnames(
+    'fa-stack',
+    className,
+    { [`fa-${size}`]: size, },
+  );
 
-    if (className) {
-      classNames.push(className);
-    }
-
-    const iconStackClassName = classNames.join(' ');
-
-    return (
-      <span {...props} className={iconStackClassName}>
-        {children}
-      </span>
-    );
-  }
+  return (
+    <span {...restProps} className={iconStackClassNames}>
+      {children}
+    </span>
+  );
 }
+
+IconStack.propTypes = propTypes;
+IconStack.defaultProps = defaultProps;
+
+export default IconStack;

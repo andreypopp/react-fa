@@ -3,10 +3,9 @@
  */
 
 import React, {PropTypes} from 'react';
+import classnames from 'classnames';
 
-export default class Icon extends React.Component {
-
-  static propTypes = {
+const propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
@@ -18,48 +17,47 @@ export default class Icon extends React.Component {
     stack: PropTypes.oneOf(['1x', '2x']),
     inverse: PropTypes.bool,
     Component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  };
+};
 
-  static defaultProps = {
+const defaultProps = {
     Component: 'span',
-  };
+    className: '',
+    size: null,
+    rotate: null,
+    flip: null,
+    fixedWidth: false,
+    spin: false,
+    pulse: false,
+    stack: null,
+    inverse: false,
+};
 
-  render() {
-    let {
-      Component,
-      name, size, rotate, flip, spin, fixedWidth, stack, inverse,
-      pulse, className, ...props
-    } = this.props;
-    let classNames = `fa fa-${name}`;
-    if (size) {
-      classNames = `${classNames} fa-${size}`;
-    }
-    if (rotate) {
-      classNames = `${classNames} fa-rotate-${rotate}`;
-    }
-    if (flip) {
-      classNames = `${classNames} fa-flip-${flip}`;
-    }
-    if (fixedWidth) {
-      classNames = `${classNames} fa-fw`;
-    }
-    if (spin) {
-      classNames = `${classNames} fa-spin`;
-    }
-    if (pulse) {
-      classNames = `${classNames} fa-pulse`;
-    }
+function Icon(props) {
+  const {
+    Component,
+    name, size, rotate, flip, spin, fixedWidth, stack, inverse,
+    pulse, className, ...restProps
+  } = props;
 
-    if (stack) {
-      classNames = `${classNames} fa-stack-${stack}`;
-    }
-    if (inverse) {
-      classNames = `${classNames} fa-inverse`;
-    }
+  const iconClassNames = classnames(
+      `fa fa-${name}`,
+      className,
+      {
+          [`fa-${size}`]: size,
+          [`fa-rotate-${rotate}`]: rotate,
+          [`fa-flip-${flip}`]: flip,
+          [`fa-stack-${stack}`]: stack,
+          'fa-fw': fixedWidth,
+          'fa-spin': spin,
+          'fa-pulse': pulse,
+          'fa-inverse': inverse,
+      },
+  );
 
-    if (className) {
-      classNames = `${classNames} ${className}`;
-    }
-    return <Component {...props} className={classNames} />;
-  }
+  return <Component {...restProps} className={iconClassNames} />;
 }
+
+Icon.propTypes = propTypes;
+Icon.defaultProps = defaultProps;
+
+export default Icon;
