@@ -3,6 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
+import classnames from 'classnames';
 
 const propTypes = {
     className: PropTypes.string,
@@ -16,7 +17,7 @@ const defaultProps = {
 };
 
 function IconStack(props) {
-  let {
+  const {
     className,
     size,
     children,
