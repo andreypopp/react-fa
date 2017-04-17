@@ -2,7 +2,8 @@
  * @copyright 2015, Andrey Popp <8mayday@gmail.com>
  */
 
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class IconStack extends React.Component {
 
