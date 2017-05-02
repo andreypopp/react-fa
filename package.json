@@ -4,7 +4,8 @@
   "description": "Font Awesome icons as React components",
   "main": "lib/index.js",
   "dependencies": {
-    "font-awesome": "^4.3.0"
+    "font-awesome": "^4.3.0",
+    "prop-types": "^15.5.6"
   },
   "peerDependencies": {
     "react": ">= 0.13.0 <16.0.0"
