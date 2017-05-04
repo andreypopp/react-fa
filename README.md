@@ -30,7 +30,7 @@ Just as simple as:
 ```javascript
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Icon} from 'react-fa'
+import Icon from 'react-fa'
 
 ReactDOM.renderComponent(
   <Icon spin name="spinner" />,
