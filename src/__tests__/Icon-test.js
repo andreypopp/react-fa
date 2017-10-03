@@ -3,12 +3,11 @@
  */
 
 import assert from 'power-assert';
-import React  from 'react';
+import React from 'react';
 import {renderToString} from 'react-dom/server';
-import Icon   from '../Icon';
+import Icon from '../Icon';
 
 describe('Icon', function() {
-
   it('renders Font Awesome className', function() {
     let markup = renderToString(<Icon name="plus" />);
     assert(/<span class="fa fa-plus"/.exec(markup));

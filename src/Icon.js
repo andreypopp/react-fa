@@ -1,12 +1,12 @@
 /**
  * @copyright 2015, Andrey Popp <8mayday@gmail.com>
+ * @flow
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class Icon extends React.Component {
-
   static propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -28,8 +28,17 @@ export default class Icon extends React.Component {
   render() {
     let {
       Component,
-      name, size, rotate, flip, spin, fixedWidth, stack, inverse,
-      pulse, className, ...props
+      name,
+      size,
+      rotate,
+      flip,
+      spin,
+      fixedWidth,
+      stack,
+      inverse,
+      pulse,
+      className,
+      ...props
     } = this.props;
     let classNames = `fa fa-${name}`;
     if (size) {
