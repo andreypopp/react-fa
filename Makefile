@@ -4,7 +4,7 @@ BABEL_OPTIONS = --stage 0
 BIN           = ./node_modules/.bin
 TESTS         = $(shell find src -path '*/__tests__/*-test.js')
 SRC           = $(filter-out $(TESTS), $(shell find src -name '*.js'))
-LIB           = $(SRC:src/%=lib/%)
+LIB           = $(SRC:src/%.js=lib/%.js) $(SRC:src/%.js=lib/%.js.flow)
 NODE          = $(BIN)/babel-node $(BABEL_OPTIONS)
 
 build:
@@ -26,10 +26,15 @@ publish: build
 	@git push --tags origin HEAD:master
 	@npm publish
 
-lib/%: src/%
-	@echo "Building $<"
+lib/%.js: src/%.js
+	@echo "Building $(@)"
 	@mkdir -p $(@D)
 	@$(BIN)/babel $(BABEL_OPTIONS) -o $@ $<
+
+lib/%.js.flow: src/%.js
+	@echo "Building $(@)"
+	@mkdir -p $(@D)
+	@cp $(<) $(@)
 
 example: build
 	@(cd example; $(BIN)/webpack --hide-modules)

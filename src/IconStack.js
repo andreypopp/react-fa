@@ -1,25 +1,26 @@
 /**
  * @copyright 2015, Andrey Popp <8mayday@gmail.com>
+ * @flow
  */
 
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-export default class IconStack extends React.Component {
+type Props = {
+  className?: string,
+  size?: 'lg' | '2x' | '3x' | '4x' | '5x',
+  children: React.Element<any>,
+};
 
+export default class IconStack extends React.Component<Props> {
   static propTypes = {
     className: PropTypes.string,
     size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
   };
 
   render() {
-    let {
-      className,
-      size,
-      children,
-      ...props
-    } = this.props;
+    let {className, size, children, ...props} = this.props;
 
     let classNames = ['fa-stack'];
 

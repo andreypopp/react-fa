@@ -3,10 +3,24 @@
  * @flow
  */
 
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Icon extends React.Component {
+type Props = {
+  name: string,
+  className?: string,
+  size?: 'lg' | '2x' | '3x' | '4x' | '5x',
+  rotate?: '45' | '90' | '135' | '180' | '225' | '270' | '315',
+  flip?: 'horizontal' | 'vertical',
+  fixedWidth?: boolean,
+  spin?: boolean,
+  pulse?: boolean,
+  stack?: '1x' | '2x',
+  inverse?: boolean,
+  Component: React.ElementType,
+};
+
+export default class Icon extends React.Component<Props> {
   static propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -26,7 +40,7 @@ export default class Icon extends React.Component {
   };
 
   render() {
-    let {
+    const {
       Component,
       name,
       size,

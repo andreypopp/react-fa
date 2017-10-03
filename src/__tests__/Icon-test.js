@@ -1,5 +1,5 @@
 /**
- * @copyright 2015, Andrey Popp <8mayday@gmail.com>
+ * @copyright 2015-present, Andrey Popp <8mayday@gmail.com>
  */
 
 import assert from 'power-assert';
