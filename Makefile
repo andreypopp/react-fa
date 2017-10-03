@@ -11,13 +11,13 @@ build:
 	@$(MAKE) -j 8 $(LIB)
 
 test::
-	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel/register -- $(TESTS)
+	@$(BIN)/jest
 
 ci::
-	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel/register --watch -- $(TESTS) 
+	@$(BIN)/jest --watch
 
 lint::
-	@$(BIN)/eslint ./src/
+	@$(BIN)/flow
 
 version-major version-minor version-patch: lint test
 	@npm version $(@:version-%=%)

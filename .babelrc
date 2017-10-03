@@ -1,8 +1,16 @@
 {
-  "stage": 0,
-  "env": {
-    "test": {
-      "plugins": ["babel-plugin-espower"]
-    }
-  }
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 2%"
+          ]
+        }
+      }
+    ],
+    "stage-1",
+    "react"
+  ]
 }

@@ -2,7 +2,6 @@
  * @copyright 2015-present, Andrey Popp <8mayday@gmail.com>
  */
 
-import assert from 'power-assert';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import Icon from '../Icon';
@@ -15,7 +14,7 @@ describe('IconStack', function() {
         <Icon name="plus" />
       </IconStack>,
     );
-    assert(/<span class="fa-stack"/.exec(markup));
+    expect(/<span class="fa-stack"/.exec(markup)).toBeTruthy();
   });
 
   it('supports optional "size"', function() {
@@ -24,7 +23,7 @@ describe('IconStack', function() {
         <Icon name="plus" />
       </IconStack>,
     );
-    assert(/<span class="fa-stack fa-2x"/.exec(markup));
+    expect(/<span class="fa-stack fa-2x"/.exec(markup)).toBeTruthy();
   });
 
   it('supports custom className', function() {
@@ -33,6 +32,6 @@ describe('IconStack', function() {
         <Icon name="plus" />
       </IconStack>,
     );
-    assert(/<span class="fa-stack x"/.exec(markup));
+    expect(/<span class="fa-stack x"/.exec(markup)).toBeTruthy();
   });
 });
