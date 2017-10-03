@@ -8,7 +8,7 @@
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
-    "react": ">= 0.13.0 <16.0.0"
+    "react": ">= 0.13.0 <17.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
