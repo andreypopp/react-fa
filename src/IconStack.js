@@ -20,9 +20,11 @@ export default class IconStack extends React.Component<Props> {
   };
 
   render() {
-    let {className, size, children, ...props} = this.props;
+    const {
+      className, size, children, ...props
+    } = this.props;
 
-    let classNames = ['fa-stack'];
+    const classNames = ['fa-stack'];
 
     if (size) {
       classNames.push(`fa-${size}`);
