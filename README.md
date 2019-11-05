@@ -1,3 +1,5 @@
+**DEPRECATED:** Use https://github.com/FortAwesome/react-fontawesome instead 
+
 # Font Awesome icons as React components
 
 ## Installation
